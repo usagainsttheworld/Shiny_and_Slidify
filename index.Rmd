@@ -41,9 +41,6 @@ The BMI value is than calculated and used to determine the tester's health statu
 
 A BMI of 25 or more is overweight, while the healthy range is 18.5 to 24.9.
 
-Here is the link to the BMI Calculator: 
-https://usagainsttheworld.shinyapps.io/BMI_caculator/
-
 --- 
 
 ## Examples of the functions used in BMI Calculator
