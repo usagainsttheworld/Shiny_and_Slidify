@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="BMI Calculator">
+  <meta name="author" content="Ling Tian">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>BMI Calculator</h1>
+    <h2>Developing Data Products Course Project</h2>
+    <p>Ling Tian<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What is Body Mass Index (BMI)?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women between the ages of 18 and 65 years old.</p>
+
+<p>Depending on your BMI number, you will be classified as:</p>
+
+<ol>
+<li>Underweight (BMI less than 18.5)</li>
+<li>Healthy weight (BMI 18.5 to 24.9)</li>
+<li>Overwieght (BMI 25 or more)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>How is the BMI calculated?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Metric Units:</h3>
+
+<p>Weight in kg / ((Height in meters)**2)      </p>
+
+<h3>Imperial Units:</h3>
+
+<p>Weight in pounds x 703 / ((Height in inches)**2)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>BMI Calculator</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This small Shiny applicaiton (BMI Calculator) is designed to calculate BMI based on the height and weight entered through the input boxes. </p>
+
+<p>The BMI value is than calculated and used to determine the tester&#39;s health status.</p>
+
+<p>A BMI of 25 or more is overweight, while the healthy range is 18.5 to 24.9.</p>
+
+<p>Here is the link to the BMI Calculator: 
+<a href="https://usagainsttheworld.shinyapps.io/BMI_caculator/">https://usagainsttheworld.shinyapps.io/BMI_caculator/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Examples of the functions used in BMI Calculator</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">input2bmi&lt;-function(weight, height) weight/((height/100)^2)
+input2bmi(70, 160)
+</code></pre>
+
+<pre><code>## [1] 27.34375
+</code></pre>
+
+<pre><code class="r">bmiCheck&lt;-function(bmi) {
+        if (bmi &gt;= 25) {
+                return (&quot;Overweight&quot;)
+        } else if (bmi &lt; 18.5) {
+                return (&quot;Underweight&quot;)
+        } else { return(&quot;Normal&quot;)
+        }
+}
+bmiCheck(input2bmi(70, 160))
+</code></pre>
+
+<pre><code>## [1] &quot;Overweight&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What is Body Mass Index (BMI)?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How is the BMI calculated?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='BMI Calculator'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Examples of the functions used in BMI Calculator'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

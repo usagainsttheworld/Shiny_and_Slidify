@@ -1,0 +1,82 @@
+---
+title       : BMI Calculator
+subtitle    : Developing Data Products Course Project
+author      : Ling Tian
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## What is Body Mass Index (BMI)?
+
+Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women between the ages of 18 and 65 years old.
+
+Depending on your BMI number, you will be classified as:
+
+1. Underweight (BMI less than 18.5)
+2. Healthy weight (BMI 18.5 to 24.9)
+3. Overwieght (BMI 25 or more)
+
+--- 
+
+## How is the BMI calculated?
+
+### Metric Units:
+Weight in kg / ((Height in meters)**2)      
+
+### Imperial Units:
+Weight in pounds x 703 / ((Height in inches)**2)
+
+---
+
+## BMI Calculator
+
+This small Shiny applicaiton (BMI Calculator) is designed to calculate BMI based on the height and weight entered through the input boxes. 
+
+The BMI value is than calculated and used to determine the tester's health status.
+
+A BMI of 25 or more is overweight, while the healthy range is 18.5 to 24.9.
+
+Here is the link to the BMI Calculator: 
+https://usagainsttheworld.shinyapps.io/BMI_caculator/
+
+--- 
+
+## Examples of the functions used in BMI Calculator
+
+```r
+input2bmi<-function(weight, height) weight/((height/100)^2)
+input2bmi(70, 160)
+```
+
+```
+## [1] 27.34375
+```
+
+```r
+bmiCheck<-function(bmi) {
+        if (bmi >= 25) {
+                return ("Overweight")
+        } else if (bmi < 18.5) {
+                return ("Underweight")
+        } else { return("Normal")
+        }
+}
+bmiCheck(input2bmi(70, 160))
+```
+
+```
+## [1] "Overweight"
+```
+
+
+
+
+
+
+
+
